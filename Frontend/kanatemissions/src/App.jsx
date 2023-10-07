@@ -1,14 +1,17 @@
 import { useState } from 'react'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-      <div className="App h-scree w-full bg-slate-700">
-        <h1>Hello Vite + React!</h1>
+    <BrowserRouter>
+      <div >
+        <Routes>
+
+        </Routes>
+
       </div>
-    </>
+    </BrowserRouter>
   )
 }
 
