@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from '../../assets/KE.png'
+import { Button } from '@material-tailwind/react';
 
 function Navbar(props) {
     return (
@@ -9,9 +10,16 @@ function Navbar(props) {
                     <img className='w-24' src={logo} />
                 </a>
 
-                <button className="bg-white text-blue-600 px-6 py-2 rounded-full hover:bg-blue-200">
-                    Sign Up
-                </button>
+                <div className='space-x-4'>
+
+
+                    <Button className="bg-white text-blue-600 px-6 py-2 rounded-full hover:bg-blue-200">
+                        Sign Up
+                    </Button>
+                    <Button className="bg-white text-blue-600 px-6 py-2 rounded-full hover:bg-blue-200">
+                        Register
+                    </Button>
+                </div>
             </div>
         </nav>
     );
