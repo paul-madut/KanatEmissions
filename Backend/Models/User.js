@@ -26,6 +26,17 @@ const UserSchema = new mongoose.Schema({
   phone: {
     type: String,
   },
+  ads: {
+    type: Array,
+  },
+  profilePic: {
+    type: String,
+  },
+  accountType: {
+    type: Boolean,
+    required: true,
+  },
+
 });
 
 UserSchema.pre("save", async function (next) {
