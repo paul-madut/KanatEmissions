@@ -2,7 +2,7 @@ import {
     MagnifyingGlassIcon,
     ChevronUpDownIcon,
 } from "@heroicons/react/24/outline";
-import { PencilIcon, UserPlusIcon } from "@heroicons/react/24/solid";
+import { PencilIcon } from "@heroicons/react/24/solid";
 import {
     Card,
     CardHeader,
@@ -22,20 +22,17 @@ import {
 
 const TABS = [
     {
-        label: "All",
-        value: "all",
+        label: "Overall",
+        value: "Overall",
     },
     {
-        label: "Monitored",
-        value: "monitored",
+        label: "Trending",
+        value: "Trending",
     },
-    {
-        label: "Unmonitored",
-        value: "unmonitored",
-    },
+
 ];
 
-const TABLE_HEAD = ["Member", "Function", "Status", "Employed", ""];
+const TABLE_HEAD = ["Company", "Ranking", "Total Points", "Last Donation"];
 
 const TABLE_ROWS = [
     {
@@ -209,13 +206,7 @@ export function SortableTable() {
                                                         >
                                                             {name}
                                                         </Typography>
-                                                        <Typography
-                                                            variant="small"
-                                                            color="blue-gray"
-                                                            className="font-normal opacity-70"
-                                                        >
-                                                            {email}
-                                                        </Typography>
+
                                                     </div>
                                                 </div>
                                             </td>
@@ -228,13 +219,7 @@ export function SortableTable() {
                                                     >
                                                         {job}
                                                     </Typography>
-                                                    <Typography
-                                                        variant="small"
-                                                        color="blue-gray"
-                                                        className="font-normal opacity-70"
-                                                    >
-                                                        {org}
-                                                    </Typography>
+
                                                 </div>
                                             </td>
                                             <td className={classes}>
@@ -256,13 +241,7 @@ export function SortableTable() {
                                                     {date}
                                                 </Typography>
                                             </td>
-                                            <td className={classes}>
-                                                <Tooltip content="Edit User">
-                                                    <IconButton variant="text">
-                                                        <PencilIcon className="h-4 w-4" />
-                                                    </IconButton>
-                                                </Tooltip>
-                                            </td>
+
                                         </tr>
                                     );
                                 },
