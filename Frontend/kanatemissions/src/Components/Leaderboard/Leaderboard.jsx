@@ -1,12 +1,15 @@
 import React from 'react';
 import { ComplexNavbar } from '../Navbar/Nav';
-function Feed(props) {
+import { SortableTable } from './lead';
+
+function Leaderboard(props) {
     return (
         <div>
             <ComplexNavbar />
+            <SortableTable />
 
         </div>
     );
 }
 
-export default Feed;
+export default Leaderboard;

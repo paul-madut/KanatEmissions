@@ -24,7 +24,13 @@ import {
     PowerIcon,
     RocketLaunchIcon,
     Bars2Icon,
+    TrophyIcon,
+    PlusCircleIcon,
+    RectangleStackIcon,
+
 } from "@heroicons/react/24/outline";
+
+import logo from "../../assets/KE.png";
 
 // profile menu component
 const profileMenuItems = [
@@ -85,8 +91,8 @@ function ProfileMenu() {
                             key={label}
                             onClick={closeMenu}
                             className={`flex items-center gap-2 rounded ${isLastItem
-                                    ? "hover:bg-red-500/10 focus:bg-red-500/10 active:bg-red-500/10"
-                                    : ""
+                                ? "hover:bg-red-500/10 focus:bg-red-500/10 active:bg-red-500/10"
+                                : ""
                                 }`}
                         >
                             {React.createElement(icon, {
@@ -146,7 +152,7 @@ function NavListMenu() {
 
     return (
         <React.Fragment>
-            <Menu allowHover open={isMenuOpen} handler={setIsMenuOpen}>
+            {/* <Menu allowHover open={isMenuOpen} handler={setIsMenuOpen}>
                 <MenuHandler>
                     <Typography as="a" href="#" variant="small" className="font-normal">
                         <MenuItem className="hidden items-center gap-2 text-blue-gray-900 lg:flex lg:rounded-full">
@@ -178,7 +184,7 @@ function NavListMenu() {
             </MenuItem>
             <ul className="ml-6 flex w-full flex-col gap-1 lg:hidden">
                 {renderItems}
-            </ul>
+            </ul> */}
         </React.Fragment>
     );
 }
@@ -186,16 +192,16 @@ function NavListMenu() {
 // nav list component
 const navListItems = [
     {
-        label: "Account",
-        icon: UserCircleIcon,
+        label: "Leaderboard",
+        icon: TrophyIcon,
     },
     {
-        label: "Blocks",
-        icon: CubeTransparentIcon,
+        label: "Post Ad",
+        icon: PlusCircleIcon,
     },
     {
-        label: "Docs",
-        icon: CodeBracketSquareIcon,
+        label: "View ads",
+        icon: RectangleStackIcon,
     },
 ];
 
@@ -235,14 +241,14 @@ export function ComplexNavbar() {
     }, []);
 
     return (
-        <Navbar className="mx-auto max-w-screen-xl p-2 lg:rounded-full lg:pl-6">
+        <Navbar className="mx-auto max-w-screen-xl p-2 pt-6 lg:rounded-full lg:pl-6">
             <div className="relative mx-auto flex items-center text-blue-gray-900">
                 <Typography
                     as="a"
                     href="#"
                     className="mr-4 ml-2 cursor-pointer py-1.5 font-medium"
                 >
-                    Material Tailwind
+                    <img className="w-14" src={logo} alt="" />
                 </Typography>
                 <div className="absolute top-2/4 left-2/4 hidden -translate-x-2/4 -translate-y-2/4 lg:block">
                     <NavList />
