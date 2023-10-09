@@ -36,95 +36,51 @@ const TABLE_HEAD = ["Company", "Ranking", "Total Points", "Last Donation"];
 
 const TABLE_ROWS = [
     {
-        img: "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-3.jpg",
-        name: "John Michael",
-        email: "john@creative-tim.com",
-        job: "Manager",
-        org: "Organization",
-        online: true,
-        date: "23/04/18",
-    },
-    {
-        img: "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-2.jpg",
-        name: "Alexa Liras",
-        email: "alexa@creative-tim.com",
-        job: "Programator",
-        org: "Developer",
-        online: false,
-        date: "23/04/18",
-    },
-    {
-        img: "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-1.jpg",
-        name: "Laurent Perrier",
-        email: "laurent@creative-tim.com",
-        job: "Executive",
-        org: "Projects",
-        online: false,
-        date: "19/09/17",
-    },
-    {
-        img: "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-4.jpg",
-        name: "Michael Levi",
+        img: "https://www.nokia.com/sites/default/files/styles/scale_1440_no_crop/public/2023-02/nokia-refreshed-logo-2_1.png.webp",
+        name: "Nokia",
         email: "michael@creative-tim.com",
-        job: "Programator",
+        job: "1",
         org: "Developer",
-        online: true,
+        points: "74000000",
         date: "24/12/08",
     },
     {
-        img: "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-5.jpg",
-        name: "Richard Gran",
-        email: "richard@creative-tim.com",
-        job: "Manager",
-        org: "Executive",
-        online: false,
-        date: "04/10/21",
-    },
-    {
-        img: "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-3.jpg",
-        name: "John Michael",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/2048px-Microsoft_logo.svg.png",
+        name: "Macrohard",
         email: "john@creative-tim.com",
-        job: "Manager",
+        job: "2",
         org: "Organization",
-        online: true,
+        points: "19000",
         date: "23/04/18",
     },
     {
-        img: "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-2.jpg",
-        name: "Alexa Liras",
+        img: "https://www.tailorbrands.com/wp-content/uploads/2021/01/apple_logo_1988.jpg",
+        name: "Pear",
         email: "alexa@creative-tim.com",
-        job: "Programator",
+        job: "3",
         org: "Developer",
-        online: false,
+        points: "9900",
         date: "23/04/18",
     },
     {
-        img: "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-1.jpg",
-        name: "Laurent Perrier",
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOWLHiUE5xj4Ihl-Ugnmlkh9Uop4GLyj_EddRxrw2Jvw&s",
+        name: "Headnovel",
         email: "laurent@creative-tim.com",
-        job: "Executive",
+        job: "4",
         org: "Projects",
-        online: false,
+        points: "8500",
         date: "19/09/17",
     },
     {
-        img: "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-4.jpg",
-        name: "Michael Levi",
-        email: "michael@creative-tim.com",
-        job: "Programator",
-        org: "Developer",
-        online: true,
-        date: "24/12/08",
-    },
-    {
-        img: "https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-5.jpg",
-        name: "Richard Gran",
+        img: "https://images.ctfassets.net/y2ske730sjqp/5QQ9SVIdc1tmkqrtFnG9U1/de758bba0f65dcc1c6bc1f31f161003d/BrandAssets_Logos_02-NSymbol.jpg?w=940",
+        name: "Webfilms",
         email: "richard@creative-tim.com",
-        job: "Manager",
+        job: "5",
         org: "Executive",
-        online: false,
+        points: "500",
         date: "04/10/21",
     },
+
 ];
 
 export function SortableTable() {
@@ -187,7 +143,7 @@ export function SortableTable() {
                         </thead>
                         <tbody>
                             {TABLE_ROWS.map(
-                                ({ img, name, email, job, org, online, date }, index) => {
+                                ({ img, name, email, job, org, points, date }, index) => {
                                     const isLast = index === TABLE_ROWS.length - 1;
                                     const classes = isLast
                                         ? "p-4"
@@ -223,14 +179,13 @@ export function SortableTable() {
                                                 </div>
                                             </td>
                                             <td className={classes}>
-                                                <div className="w-max">
-                                                    <Chip
-                                                        variant="ghost"
-                                                        size="sm"
-                                                        value={online ? "online" : "offline"}
-                                                        color={online ? "green" : "blue-gray"}
-                                                    />
-                                                </div>
+                                                <Typography
+                                                    variant="small"
+                                                    color="blue-gray"
+                                                    className="font-normal"
+                                                >
+                                                    {points}
+                                                </Typography>
                                             </td>
                                             <td className={classes}>
                                                 <Typography
