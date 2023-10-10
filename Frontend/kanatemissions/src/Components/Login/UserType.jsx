@@ -7,6 +7,9 @@ import {
     Button,
 } from "@material-tailwind/react";
 
+import { Link } from 'react-router-dom';
+
+
 function UserType(props) {
     return (
         <div className='background flex flex-col space-y-24 space-x-8 items-center justify-center h-screen w-screen bg-cover bg-[url("https://images.unsplash.com/photo-1488554378835-f7acf46e6c98?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80")]'>
@@ -45,11 +48,11 @@ function UserType(props) {
                     <div className='flex align-end'>
 
                         <CardFooter className="pt-0">
-                            <Button>Sign up</Button>
+                            <Link to="../register"><Button>Sign up</Button></Link>
                         </CardFooter>
 
                         <CardFooter className="pt-0">
-                            <Button>Sign In</Button>
+                            <Link to="../login"><Button>Sign In</Button></Link>
                         </CardFooter>
                     </div>
                 </Card>

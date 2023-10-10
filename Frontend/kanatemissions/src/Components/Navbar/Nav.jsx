@@ -30,6 +30,9 @@ import {
 
 } from "@heroicons/react/24/outline";
 
+import { NavLink } from 'react-router-dom';
+
+
 import logo from "../../assets/KE.png";
 
 // profile menu component
@@ -74,7 +77,7 @@ function ProfileMenu() {
                         size="sm"
                         alt="tania andrew"
                         className="border border-gray-900 p-0.5"
-                        src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
+                        src="https://wallpapers.com/images/hd/blank-default-pfp-wue0zko1dfxs9z2c.jpg"
                     />
                     <ChevronDownIcon
                         strokeWidth={2.5}
@@ -134,94 +137,44 @@ const navListMenuItems = [
     },
 ];
 
-function NavListMenu() {
-    const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-
-    const renderItems = navListMenuItems.map(({ title, description }) => (
-        <a href="#" key={title}>
-            <MenuItem>
-                <Typography variant="h6" color="blue-gray" className="mb-1">
-                    {title}
-                </Typography>
-                <Typography variant="small" color="gray" className="font-normal">
-                    {description}
-                </Typography>
-            </MenuItem>
-        </a>
-    ));
-
-    return (
-        <React.Fragment>
-            {/* <Menu allowHover open={isMenuOpen} handler={setIsMenuOpen}>
-                <MenuHandler>
-                    <Typography as="a" href="#" variant="small" className="font-normal">
-                        <MenuItem className="hidden items-center gap-2 text-blue-gray-900 lg:flex lg:rounded-full">
-                            <Square3Stack3DIcon className="h-[18px] w-[18px]" /> Pages{" "}
-                            <ChevronDownIcon
-                                strokeWidth={2}
-                                className={`h-3 w-3 transition-transform ${isMenuOpen ? "rotate-180" : ""
-                                    }`}
-                            />
-                        </MenuItem>
-                    </Typography>
-                </MenuHandler>
-                <MenuList className="hidden w-[36rem] grid-cols-7 gap-3 overflow-visible lg:grid">
-                    <Card
-                        color="blue"
-                        shadow={false}
-                        variant="gradient"
-                        className="col-span-3 grid h-full w-full place-items-center rounded-md"
-                    >
-                        <RocketLaunchIcon strokeWidth={1} className="h-28 w-28" />
-                    </Card>
-                    <ul className="col-span-4 flex w-full flex-col gap-1">
-                        {renderItems}
-                    </ul>
-                </MenuList>
-            </Menu>
-            <MenuItem className="flex items-center gap-2 text-blue-gray-900 lg:hidden">
-                <Square3Stack3DIcon className="h-[18px] w-[18px]" /> Pages{" "}
-            </MenuItem>
-            <ul className="ml-6 flex w-full flex-col gap-1 lg:hidden">
-                {renderItems}
-            </ul> */}
-        </React.Fragment>
-    );
-}
-
 // nav list component
 const navListItems = [
     {
-        label: "Leaderboard",
+        label: "Leaderboards",
         icon: TrophyIcon,
+        link: "/app/leaderboard",
     },
     {
         label: "Post Ad",
         icon: PlusCircleIcon,
+        link: "/app/new",
     },
     {
-        label: "View ads",
+        label: "View Ads",
         icon: RectangleStackIcon,
+        link: "/app/ads",
     },
 ];
 
 function NavList() {
     return (
         <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center">
-            <NavListMenu />
-            {navListItems.map(({ label, icon }, key) => (
+
+            {navListItems.map(({ label, icon, link }, key) => (
                 <Typography
                     key={label}
                     as="a"
-                    href="#"
+
                     variant="small"
                     color="blue-gray"
                     className="font-normal"
                 >
-                    <MenuItem className="flex items-center gap-2 lg:rounded-full">
-                        {React.createElement(icon, { className: "h-[18px] w-[18px]" })}{" "}
-                        {label}
-                    </MenuItem>
+                    <NavLink to={link}>
+                        <MenuItem className="flex items-center gap-2 lg:rounded-full">
+                            {React.createElement(icon, { className: "h-[18px] w-[18px]" })}{" "}
+                            {label}
+                        </MenuItem>
+                    </NavLink>
                 </Typography>
             ))}
         </ul>
@@ -241,14 +194,14 @@ export function ComplexNavbar() {
     }, []);
 
     return (
+
         <Navbar className="mx-auto max-w-screen-xl p-2 pt-6 lg:rounded-full lg:pl-6">
             <div className="relative mx-auto flex items-center text-blue-gray-900">
                 <Typography
                     as="a"
-                    href="#"
                     className="mr-4 ml-2 cursor-pointer py-1.5 font-medium"
                 >
-                    <img className="w-14" src={logo} alt="" />
+                    <NavLink to="/app"><img className="w-14" src={logo} alt="" /></NavLink>
                 </Typography>
                 <div className="absolute top-2/4 left-2/4 hidden -translate-x-2/4 -translate-y-2/4 lg:block">
                     <NavList />
@@ -268,5 +221,6 @@ export function ComplexNavbar() {
                 <NavList />
             </MobileNav>
         </Navbar>
+
     );
 }

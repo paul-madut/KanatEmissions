@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from '../../assets/KE.png'
 import { Button } from '@material-tailwind/react';
+import { NavLink } from 'react-router-dom';
 
 function Navbar(props) {
     return (
@@ -13,12 +14,18 @@ function Navbar(props) {
                 <div className='space-x-4'>
 
 
-                    <Button className="bg-white text-blue-600 px-6 py-2 rounded-full hover:bg-blue-200">
-                        Sign Up
-                    </Button>
-                    <Button className="bg-white text-blue-600 px-6 py-2 rounded-full hover:bg-blue-200">
-                        Register
-                    </Button>
+                    <NavLink to={'login'}>
+
+                        <Button className="bg-white text-blue-600 px-6 py-2 rounded-full hover:bg-blue-200">
+                            Sign In
+                        </Button>
+                    </NavLink>
+
+                    <NavLink to={'type'}>
+                        <Button className="bg-white text-blue-600 px-6 py-2 rounded-full hover:bg-blue-200">
+                            Register
+                        </Button>
+                    </NavLink>
                 </div>
             </div>
         </nav>

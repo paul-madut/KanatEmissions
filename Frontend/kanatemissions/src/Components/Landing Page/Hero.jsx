@@ -1,12 +1,18 @@
 import React from 'react';
+import { Button } from '@material-tailwind/react';
+import { NavLink } from 'react-router-dom';
 
 function Hero(props) {
     return (
-        <section className="hero bg-[your-bg-color] text-[your-text-color] py-20">
+        <section className="hero text-[your-text-color] py-20">
             <div className="container mx-auto text-center">
-                <h1 className="text-4xl font-bold mb-8">Your Product Name</h1>
-                <p className="text-xl mb-8">Short description or tagline here.</p>
-                <a href="#" className="bg-[your-button-color] text-[your-button-text-color] px-6 py-3 rounded-full">Get Started</a>
+                <h1 className="text-4xl font-bold mb-8">KanatEmissions</h1>
+                <p className="text-xl mb-8">Put an end to the cycle of unneccesary tech waste.</p>
+                <NavLink to={'type'}>
+                    <Button className="bg-white text-blue-600 px-6 py-2 rounded-full hover:bg-blue-200">
+                        Sign Up
+                    </Button>
+                </NavLink>
             </div>
         </section>
     );

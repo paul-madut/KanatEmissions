@@ -1,6 +1,6 @@
 import React from 'react';
 import AdsPage from './AdPage';
-import { ComplexNavbar } from '../Navbar/Nav';
+
 import { Typography } from '@material-tailwind/react';
 import { DefaultPagination } from './Pagination';
 
@@ -26,7 +26,6 @@ function Ads(props) {
 
     return (
         <div>
-            <ComplexNavbar />
             <Typography variant='h1' className='text-start text-6xl pt-6 ml-24'>Ads</Typography>
             <AdsPage adsData={adsData} />
 

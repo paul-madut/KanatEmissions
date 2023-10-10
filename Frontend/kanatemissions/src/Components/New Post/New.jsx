@@ -1,11 +1,11 @@
 import React from 'react';
 
-function Company(props) {
+function New(props) {
     return (
         <div>
-
+            festfgrs
         </div>
     );
 }
 
-export default Company;
+export default New;
