@@ -7,7 +7,6 @@ function Feed(props) {
     return (
         <div>
             <ComplexNavbar />
-            <Typography variant='h1'>Feed</Typography>
             <Outlet />
 
         </div>
