@@ -28,11 +28,11 @@ function UserType(props) {
                     <div className='flex align-end'>
 
                         <CardFooter className="pt-0">
-                            <Button>Sign up</Button>
+                            <Link to="../register"><Button>Sign up</Button></Link>
                         </CardFooter>
 
                         <CardFooter className="pt-0">
-                            <Button>Sign In</Button>
+                            <Link to="../login"><Button>Sign In</Button></Link>
                         </CardFooter>
                     </div>
                 </Card>

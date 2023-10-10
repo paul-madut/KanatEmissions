@@ -1,10 +1,10 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-const userModel = require("./models/Users");
+const userModel = require("./Models/Users");
 const jwt = require("jsonwebtoken");
-const bcrypt = require("bcrypt");
-require("dotenv").config();
+const bcrypt = require("bcryptjs");
+require('dotenv').config();
 
 const app = express();
 const uri = process.env.URI;
@@ -34,6 +34,7 @@ app.post("/api/login", async (req, res) => {
     res.json({ status: "error", user: false });
   }
 });
+
 app.post("/api/register", async (req, res) => {
   console.log(req.body);
   try {

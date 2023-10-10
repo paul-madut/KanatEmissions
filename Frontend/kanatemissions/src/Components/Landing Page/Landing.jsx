@@ -4,15 +4,6 @@ import Features from './Features';
 import Navbar from './Navbar';
 import Footer from './Footer';
 
-// Pages
-import Login from '../Login/Login';
-import UserType from '../Login/UserType';
-
-import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';
-import RootLayout from '../../Layouts/RootLayout';
-
-
-
 function Landing() {
 
 
