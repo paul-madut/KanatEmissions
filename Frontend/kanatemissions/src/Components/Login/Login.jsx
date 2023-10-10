@@ -9,12 +9,14 @@ import {
     Checkbox,
     Button,
 } from "@material-tailwind/react";
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 function Login() {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
+    const navigate = useNavigate();
 
 
     async function loginUser(e) {
@@ -31,6 +33,9 @@ function Login() {
 
         const data = await response.json();
         console.log(data)
+        if (data.status === 'ok') {
+            navigate('/app');
+        }
     }
     return (
         <>
