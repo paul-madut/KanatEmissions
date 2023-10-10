@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { Alert } from '@material-tailwind/react';
 
 function Register() {
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
+    const [data, setData] = useState({});
 
     async function registerUser(e) {
         e.preventDefault();
@@ -21,7 +23,7 @@ function Register() {
             })
         })
 
-        const data = await response.json();
+        setData(await response.json());
         console.log(data)
     }
 
@@ -142,6 +144,8 @@ function Register() {
                             </NavLink>
                         </p>
                     </form>
+                    {data.status === 'ok' && <Alert color="green">Registered Successfully</Alert>}
+                    {data.status === 'error' && <Alert color="red">Registration Failed</Alert>}
                 </div>
             </div>
         </>

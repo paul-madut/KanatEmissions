@@ -16,8 +16,8 @@ function Feature(props) {
             <Card className="feature mt-6 w-96">
                 <CardHeader color="blue-gray" className="relative h-56">
                     <img
-                        className="absolute left-0 right-0 mx-auto w-"
-                        src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+                        className="absolute left-0 right-0 mx-auto h-full w-full object-cover"
+                        src={[props.img]}
                         alt="card-image"
                     />
                 </CardHeader>
@@ -29,9 +29,6 @@ function Feature(props) {
                         {props.description}
                     </Typography>
                 </CardBody>
-                <CardFooter className="pt-0">
-                    <Button>Read More</Button>
-                </CardFooter>
             </Card>
         </div>
     );

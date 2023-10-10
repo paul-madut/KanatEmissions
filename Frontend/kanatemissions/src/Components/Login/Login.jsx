@@ -8,13 +8,16 @@ import {
     Input,
     Checkbox,
     Button,
+    Alert,
 } from "@material-tailwind/react";
+
 import { NavLink, useNavigate } from 'react-router-dom';
 
 function Login() {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [data, setData] = useState({});
 
     const navigate = useNavigate();
 
@@ -31,7 +34,7 @@ function Login() {
             })
         })
 
-        const data = await response.json();
+        setData(await response.json());
         console.log(data)
         if (data.status === 'ok') {
             navigate('/app');
@@ -74,6 +77,7 @@ function Login() {
                                     Sign up
                                 </Typography></NavLink>
                             </Typography>
+                            {data.status === 'error' && <Alert color="red">Login Failed</Alert>}
                         </CardFooter>
                     </form>
                 </Card>

@@ -5,10 +5,10 @@ import { NavLink } from 'react-router-dom';
 
 function Navbar(props) {
     return (
-        <nav className="bg-blue-600 text-white py-4">
+        <nav className="bg-white text-white py-1">
             <div className="container mx-auto flex justify-between items-center">
                 <a className="text-2xl font-bold">
-                    <img className='w-24' src={logo} />
+                    <img className='w-24 shadow-xl' src={logo} />
                 </a>
 
                 <div className='space-x-4'>
