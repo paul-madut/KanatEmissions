@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
 function Register() {
     const [name, setName] = useState('');
@@ -126,12 +127,14 @@ function Register() {
                         </button>
                         <p className="mt-4 block text-center font-sans text-base font-normal leading-relaxed text-gray-700 antialiased">
                             Already have an account?
-                            <a
-                                className="font-medium text-pink-500 transition-colors hover:text-blue-700"
-                                href="#"
-                            >
-                                Sign In
-                            </a>
+                            <NavLink to="../login">
+                                <a
+                                    className="font-medium text-pink-500 transition-colors hover:text-blue-700"
+                                    href="#"
+                                >
+                                    Sign In
+                                </a>
+                            </NavLink>
                         </p>
                     </form>
                 </div>

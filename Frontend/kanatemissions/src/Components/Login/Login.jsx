@@ -59,7 +59,7 @@ function Login() {
                             </Button>
                             <Typography variant="small" className="mt-6 flex justify-center">
                                 Don&apos;t have an account?
-                                <NavLink><Typography
+                                <NavLink to="../register"><Typography
                                     as="a"
                                     href="#signup"
                                     variant="small"
