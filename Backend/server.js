@@ -19,7 +19,7 @@ app.post("/api/login", async (req, res) => {
 
   const user = await userModel
     .findOne({
-      userName: req.body.userName,
+      email: req.body.email,
     })
     .exec();
   if (user == null) {
@@ -40,7 +40,7 @@ app.post("/api/register", async (req, res) => {
   try {
     const user = await userModel.create({
       name: req.body.name,
-      userName: req.body.userName,
+      phone: req.body.phone,
       email: req.body.email,
       password: req.body.password,
     });

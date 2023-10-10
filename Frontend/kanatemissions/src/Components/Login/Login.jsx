@@ -24,7 +24,7 @@ function Login() {
             headers: {
                 'Content-Type': 'application/json'
             }, body: JSON.stringify({
-                userName: email,
+                email: email,
                 password: password
             })
         })
@@ -54,7 +54,7 @@ function Login() {
                             </div>
                         </CardBody>
                         <CardFooter className="pt-0">
-                            <Button variant="gradient" fullWidth>
+                            <Button type="submit" variant="gradient" fullWidth>
                                 Sign In
                             </Button>
                             <Typography variant="small" className="mt-6 flex justify-center">
