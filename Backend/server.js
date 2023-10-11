@@ -67,3 +67,5 @@ async function validateUser(password, hash) {
   const validated = await bcrypt.compare(password, hash);
   return validated;
 }
+
+module.exports = app;
